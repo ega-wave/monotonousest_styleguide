@@ -1,0 +1,12 @@
+
+- All classes have public members (no private members).
+	so, use "struct" (not "class")
+
+- All classes have no getter/setter functions.
+	you can access other struct's public members directly.
+ 
+- All classes have only one function (operator()() const).
+
+- This "operator()() const" function has no arguments.
+
+
