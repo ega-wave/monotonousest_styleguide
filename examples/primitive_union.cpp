@@ -6,12 +6,15 @@ struct _4
 {
 	union {
 		uint8_t uc_[4];
+		uint8_t uc0_, uc1_, uc2_, uc3_;
 		uint16_t us_[2];
+		uint16_t us0_, us1_;
 		uint32_t ui_[1];
+		uint32_t ui0_;
 	};
 	_4() {}
 	~_4() {}
-	_4(const _4& _) { ui_[0] = _.ui_[0]; }
+	_4(const _4& _) : ui0_(_.ui0_) {}
 	_4& operator=(const _4& _) { ui_[0] = _.ui_[0]; return *this; }
 	_4(const uint8_t* begin) {
 		uc_[0] = begin[0];
