@@ -8,6 +8,10 @@ struct _4
 		uint16_t us_[2];
 		uint32_t ui_[1];
 	};
+	_4() {}
+	~_4() {}
+	_4(const _4& _) { ui_[0] = _.ui_[0]; }
+	_4& operator=(const _4& _) { ui_[0] = _.ui_[0]; return *this; }
 	void set(int idx, uint8_t uc) { uc_[idx] = uc; }
 	void set(int idx, uint16_t us) { us_[idx] = us; }
 	void set(uint32_t ui) { ui_[0] = ui; }
@@ -59,6 +63,9 @@ int main()
 	printf("%d\n", sizeof(_32));
 	_8 c;
 	c.uc_[0] = '0';
+	_4 i;
+	_4 j(i);
+	i = j;
 	return c.uc_[0]-0x30; // 0
 }
 
