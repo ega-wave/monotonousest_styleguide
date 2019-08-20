@@ -28,10 +28,10 @@ struct _4
 	}
 	void set(int idx, uint8_t uc) { uc_[idx] = uc; }
 	void set(int idx, uint16_t us) { us_[idx] = us; }
-	void set(uint32_t ui) { ui_[0] = ui; }
+	void set(uint32_t ui) { ui0_ = ui; }
 	uint8_t get(int idx, uint8_t) const { return uc_[idx]; }
 	uint16_t get(int idx, uint16_t) const { return us_[idx]; }
-	uint32_t get() const { return ui_[0]; }
+	uint32_t get() const { return ui0_; }
 };
 
 struct _8
