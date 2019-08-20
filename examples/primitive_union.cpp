@@ -1,5 +1,6 @@
 
 #include <stdio.h>
+#include <algorithm>
 
 struct _4
 {
@@ -12,6 +13,16 @@ struct _4
 	~_4() {}
 	_4(const _4& _) { ui_[0] = _.ui_[0]; }
 	_4& operator=(const _4& _) { ui_[0] = _.ui_[0]; return *this; }
+	_4(const uint8_t* begin) {
+		uc_[0] = begin[0];
+		uc_[1] = begin[1];
+		uc_[2] = begin[2];
+		uc_[3] = begin[3];
+	}
+	_4(const uint16_t* begin) {
+		us_[0] = begin[0];
+		us_[1] = begin[1];
+	}
 	void set(int idx, uint8_t uc) { uc_[idx] = uc; }
 	void set(int idx, uint16_t us) { us_[idx] = us; }
 	void set(uint32_t ui) { ui_[0] = ui; }
@@ -66,6 +77,9 @@ int main()
 	_4 i;
 	_4 j(i);
 	i = j;
+	uint8_t c4[4] = {0x30, 0x31, 0x32, 0x33};
+	_4 c4_1(&c4[0]);
+	printf("%c\n", c4_1.get(3,uint8_t()));
 	return c.uc_[0]-0x30; // 0
 }
 
