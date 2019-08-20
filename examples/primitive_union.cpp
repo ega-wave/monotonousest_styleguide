@@ -1,6 +1,5 @@
 
 #include <stdio.h>
-#include <algorithm>
 
 struct _4
 {
