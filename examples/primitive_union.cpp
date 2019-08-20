@@ -14,7 +14,7 @@ struct _4
 	_4() {}
 	~_4() {}
 	_4(const _4& _) : ui0_(_.ui0_) {}
-	_4& operator=(const _4& _) { ui_[0] = _.ui_[0]; return *this; }
+	_4& operator=(const _4& _) { ui0_ = _.ui0_; return *this; }
 	_4(const uint8_t* begin) {
 		uc_[0] = begin[0];
 		uc_[1] = begin[1];
